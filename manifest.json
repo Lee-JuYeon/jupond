@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Dokdo Mail",
+  "version": "1.0.0",
+  "description": "Dokdo mail checks mail to guard against hacking",
+  "action": { 
+    "default_popup": "popup.html",
+    "default_icon": "logo_dokdomail.png"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://mail.naver.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/mail/u/0/*",   
+        "https://mail.naver.com/v2/read/*"   
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "logo_dokdomail.png",
+    "48": "logo_dokdomail.png",
+    "128": "logo_dokdomail.png"
+  }
+}
